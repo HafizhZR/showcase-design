@@ -37,14 +37,14 @@ export default function Navbar() {
           </Link>
           {Login ? (
             <>
+              <Link href='/explore' className='hover:text-primary hover:underline'>
+                Explore
+              </Link>
               <Link
-                href='#'
+                href='/upload/create'
                 className='hidden md:block hover:text-primary hover:underline'
               >
                 Create Post
-              </Link>
-              <Link href='#' className='hover:text-primary hover:underline'>
-                Explore
               </Link>
             </>
           ) : (
@@ -100,7 +100,7 @@ export default function Navbar() {
                     <h3>My Profile</h3>
                   </Link>
                   <Link
-                    href='/user/profile'
+                    href='/upload/create'
                     className='flex md:hidden items-center gap-2 font-semibold text-gray-600 transition-all hover:text-primary'
                   >
                     <CgSoftwareUpload size={20} />
