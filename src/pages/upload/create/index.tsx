@@ -46,7 +46,7 @@ export default function Upload() {
             <div className='flex'>
             <button
                 type="button"
-                className="bg-gray-300 text-black font-bold py-2 px-4 rounded hover:bg-gray-400 ml-8 w-[150px] h-[50px] sm:w-[100px] sm:h-[40px]"
+                className="bg-gray-300 text-black font-bold py-2 px-4 rounded hover:opacity-50 ml-8 w-[150px] h-[50px] sm:w-[100px] sm:h-[40px]"
                 onClick={handleCancel}
             >
                 Cancel
@@ -130,7 +130,7 @@ export default function Upload() {
                     </div>
                     <button
                         type="button"
-                        className="bg-primary font-bold text-white py-2 px-4 w-[125px] h-[41px] rounded hover:bg-blue-600 absolute right-8 bottom-16"
+                        className="bg-primary font-bold text-white py-2 px-4 w-[125px] h-[41px] rounded hover:opacity-50 absolute right-8 bottom-16"
                         onClick={handleNext}
                     >
                         Next
