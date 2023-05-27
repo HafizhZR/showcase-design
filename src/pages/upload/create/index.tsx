@@ -53,17 +53,17 @@ export default function Upload() {
             </button>
             <div className="flex justify-center items-center mb-6 mx-auto">
                 <div className="flex-wrap items-center justify-center">
-                    <div className="w-10 h-10 sm:w-8 sm:h-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-semibold mx-auto">
+                    <div className="w-10 h-10 sm:w-8 sm:h-8 flex items-center justify-center rounded-full bg-primary text-white font-semibold mx-auto">
                         1
                     </div>
-                    <div className="h-6 sm:w-10"><h1 className="font-bold mb-6 sm:text-sm flex justify-center text-center">Upload Detail Post</h1></div>
+                    <div className="h-6 sm:w-10"><h1 className="font-semibold mb-6 sm:text-sm flex justify-center text-center">Upload Detail Post</h1></div>
                 </div>
                 <hr className="border-gray-300 border-b-2 sm:w-32 w-60 mb-5 weight-100"/>
                 <div className="flex-wrap items-center justify-center">
-                    <div className="w-10 h-10 sm:w-8 sm:h-8 flex items-center justify-center rounded-full bg-gray-300 text-gray-700 font-semibold mx-auto">
+                    <div className="w-10 h-10 sm:w-8 sm:h-8 flex items-center justify-center rounded-full bg-gray-300 text-white font-semibold mx-auto">
                         2
                     </div>
-                    <div className="h-6 sm:w-10"><h1 className="font-bold mb-6 sm:text-sm flex justify-center text-center">Review Postingan</h1></div>
+                    <div className="h-6 sm:w-10"><h1 className="font-semibold mb-6 sm:text-sm flex justify-center text-center">Review Postingan</h1></div>
                 </div>
             </div>
             </div>
@@ -123,7 +123,7 @@ export default function Upload() {
                         <input
                             type="text"
                             id="link"
-                            className="border border-gray-300 p-2 w-full mb-20"
+                            className="border border-gray-300 p-2 w-full mb-20 text-primary font-semibold"
                             value={link}
                             onChange={handleLinkChange}
                         />
