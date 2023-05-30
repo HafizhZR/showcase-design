@@ -57,7 +57,7 @@ export default function PostDetail() {
           </div>
           <div className='post-info bg-[#005147] min-w-full min-h-auto p-12'>
             <div className='flex flex-col md:flex-row justify-center items-center gap-8 lg:gap-12'>
-              <div className='bg-white flex flex-col justify-center p-8 gap-6 w-3/4 md:w-2/4 lg:w-1/3 min-h-fit rounded-lg'>
+              <div className='bg-white flex flex-col justify-center p-8 gap-6 w-full md:w-2/4 lg:w-1/3 min-h-fit rounded-lg'>
                 <p className='text-[#656470] font-bold uppercase text-sm'>
                   Owner
                 </p>
@@ -78,7 +78,7 @@ export default function PostDetail() {
                   View Profile
                 </button>
               </div>
-              <div className='bg-white flex flex-col justify-center p-8 gap-6 w-3/4 md:w-2/4 lg:w-1/3 min-h-fit rounded-lg'>
+              <div className='bg-white flex flex-col justify-center p-8 gap-6 w-full md:w-2/4 lg:w-1/3 min-h-fit rounded-lg'>
                 <p className='text-[#656470] font-bold uppercase text-sm'>
                   Mobile App - PLANT
                 </p>
