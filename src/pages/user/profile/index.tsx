@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import ProfilePostCard from '@/components/ProfilePostCard';
 import { CgPen, CgMenuGridR } from 'react-icons/cg';
 import { AiFillHome } from 'react-icons/ai';
@@ -84,6 +85,7 @@ export default function Profile() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

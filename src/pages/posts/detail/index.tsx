@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Avatar from '@/assets/avatar.png';
 import PostImage from '@/assets/post-image.png';
 import { CgProfile, CgLink } from 'react-icons/cg';
@@ -99,6 +100,7 @@ export default function PostDetail() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

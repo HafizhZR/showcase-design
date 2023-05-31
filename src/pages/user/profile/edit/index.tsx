@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { CgArrowLeft, CgSoftwareUpload } from 'react-icons/cg';
 import { AiOutlineUser } from 'react-icons/ai';
@@ -69,6 +70,7 @@ export default function EditProfile() {
           </Link>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
