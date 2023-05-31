@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { CgProfile, CgLink } from 'react-icons/cg';
+import Avatar from '@/assets/avatar.png';
 
 export default function ReviewPostingan() {
   const router = useRouter();
