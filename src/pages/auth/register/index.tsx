@@ -43,12 +43,12 @@ const Register = () => {
       </Head>
 
       <div className='flex h-screen items-center justify-center'>
-        <div className='flex h-full w-full basis-1/2 flex-col items-center justify-center text-white sm:-mr150'>
+        <div className='flex h-full w-full basis-1/2 flex-col items-center justify-center text-white'>
           <div className='relative z-50 text-center '>
             <h1 className='pb-4 text-4xl font-semibold'>Welcome Back To</h1>
             <Image src={craftifyWhite} alt='craftify logo' width={351} />
           </div>
-          <div className='absolute brightness-50 sm:hidden'>
+          <div className='absolute brightness-50'>
             <Image
               src={bgLogin}
               alt='Background Login'
@@ -68,7 +68,7 @@ const Register = () => {
           className='flex h-screen basis-1/2 flex-col items-start justify-center px-[66px] min-w-fit mr-20 mt-20'
           onSubmit={handleSubmit}
         >
-          <h2 className='pb-2 text-[44px] font-extrabold sm:mx-auto'>
+          <h2 className='pb-2 text-[44px] font-extrabold'>
             Register
           </h2>
           <h3 className='pb-8 text-xl'>

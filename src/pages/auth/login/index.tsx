@@ -31,7 +31,7 @@ const Login = () => {
       </Head>
 
       <div className='flex h-screen items-center justify-center'>
-        <div className='flex h-full w-full basis-1/2 flex-col items-center justify-center text-white sm:-mr-20'>
+        <div className='flex h-full w-full basis-1/2 flex-col items-center justify-center text-white'>
           <div className='relative z-10 text-center'>
             <h1 className='pb-4 text-4xl font-semibold'>Welcome Back To</h1>
             <Image
@@ -41,7 +41,7 @@ const Login = () => {
               className='mx-auto'
             />
           </div>
-          <div className='absolute brightness-50 sm:hidden'>
+          <div className='absolute brightness-50'>
             <Image
               src={bgLogin}
               alt='Background Login'
@@ -58,10 +58,10 @@ const Login = () => {
         </div>
 
         <form
-          className='flex h-full basis-1/2 flex-col items-start justify-center px-[66px] min-w-fit sm:mr-20'
+          className='flex h-full basis-1/2 flex-col items-start justify-center px-[66px] min-w-fit '
           onSubmit={handleSubmit}
         >
-          <h2 className='pb-2 text-[44px] font-extrabold sm:mx-auto'>Log In</h2>
+          <h2 className='pb-2 text-[44px] font-extrabold'>Log In</h2>
           <h3 className='pb-20 text-xl'>
             New user?{' '}
             <Link
