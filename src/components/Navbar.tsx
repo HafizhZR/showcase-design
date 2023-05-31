@@ -105,7 +105,7 @@ export default function Navbar() {
                     <h3>My Profile</h3>
                   </Link>
                   <Link
-                    href='/user/profile'
+                    href='/upload/create'
                     className='flex md:hidden items-center gap-2 font-semibold text-gray-600 transition-all hover:text-primary'
                   >
                     <CgSoftwareUpload size={20} />
