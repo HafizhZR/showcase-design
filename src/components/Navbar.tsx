@@ -40,7 +40,7 @@ export default function Navbar() {
                 Explore
               </Link>
               <Link
-                href='#'
+                href='/upload/create'
                 className='hidden md:block hover:text-primary font-medium text-base hover:underline'
               >
                 Create Post
