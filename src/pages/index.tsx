@@ -1,3 +1,7 @@
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
+import Link from "next/link"
+
 import Head from "next/head";
 import Image from "next/image";
 import headLogo from "@/assets/headLogo.png";
@@ -9,6 +13,7 @@ import miniBg from "@/assets/image.png";
 export default function Home() {
   return (
     <>
+    <Navbar />
       <Head>
         <title>Homepage - Craftify</title>
         <meta name="description" content="Homepage Carftify App" />
@@ -140,6 +145,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

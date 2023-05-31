@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hidden-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.hidden-scroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html {
+  color: #252525;
+}
+
+.bg-profile {
+  background: linear-gradient(
+    to bottom,
+    #2a9d8f 0%,
+    #2a9d8f 50%,
+    #ffffff 50%,
+    #ffffff 100%
+  );
+}
