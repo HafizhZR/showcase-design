@@ -3,8 +3,26 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { CgArrowLeft, CgSoftwareUpload } from 'react-icons/cg';
 import { AiOutlineUser } from 'react-icons/ai';
+import { ChangeEvent, useState } from 'react';
 
 export default function EditProfile() {
+  const [imagePreview, setImagePreview] = useState<string>('');
+
+  const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      if (typeof reader.result === 'string') {
+        setImagePreview(reader.result);
+      }
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -36,6 +54,7 @@ export default function EditProfile() {
                 id='user_img'
                 accept='image/png, image/jpeg, image/webp'
                 className='hidden'
+                onChange={handleImageUpload}
               />
               <label htmlFor='user_img'>
                 <div className='flex flex-row gap-3 border-2 border-primary p-4 rounded-2xl hover:cursor-pointer'>
@@ -45,6 +64,13 @@ export default function EditProfile() {
                   </div>
                 </div>
               </label>
+              {imagePreview && (
+                <img
+                  src={imagePreview}
+                  alt='Preview'
+                  className='mt-3 rounded-lg max-w-[300px] max-h-[300px]'
+                />
+              )}
             </div>
           </div>
           <div className='flex flex-col gap-8 lg:w-7/12 xl:9/12'>
