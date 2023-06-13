@@ -26,9 +26,31 @@ const Footer = () => {
     },
   ];
 
+  const socialMediaIcons = [
+    {
+      name: 'Twitter',
+      logo: Twitter,
+    },
+    {
+      name: 'YouTube',
+      logo: YouTube,
+    },
+    {
+      name: 'Facebook',
+      logo: Facebook,
+    },
+    {
+      name: 'Pinterest',
+      logo: Pinterest,
+    },
+  ];
+
   return (
     <footer className="bg-white-800 text-[#2A9D8F] py-8">
-      <div className="mx-auto px-4"  style={{ paddingLeft: '50px', paddingRight: '50px'}}>
+      <div
+        className="mx-auto px-4"
+        style={{ paddingLeft: '50px', paddingRight: '50px' }}
+      >
         <div className="grid grid-cols-4 gap-12">
           <div className="mb-5 flex justify-left flex-col items-start">
             <Link href="/">
@@ -40,18 +62,15 @@ const Footer = () => {
               And connect with us
             </h4>
             <div className="flex justify-start">
-              <Link href="/pages/404.tsx">
-                <Image src={Twitter} alt="logo" className="h-[30px] w-[30px]" />
-              </Link>
-              <Link href="/pages/404.tsx">
-                <Image src={YouTube} alt="logo" className="h-[30px] w-[30px]" />
-              </Link>
-              <Link href="/pages/404.tsx">
-                <Image src={Facebook} alt="logo" className="h-[30px] w-[30px]" />
-              </Link>
-              <Link href="/pages/404.tsx">
-                <Image src={Pinterest} alt="logo" className="h-[30px] w-[30px]" />
-              </Link>
+              {socialMediaIcons.map((icon) => (
+                <Link key={icon.name} href="/pages/404.tsx">
+                  <Image
+                    src={icon.logo}
+                    alt={icon.name}
+                    className="h-[30px] w-[30px]"
+                  />
+                </Link>
+              ))}
             </div>
           </div>
           {footerData.map((section) => (
@@ -77,7 +96,8 @@ const Footer = () => {
           style={{ paddingLeft: '5px' }}
         >
           <p>
-            &#169; 2023 | Craftify is a website to help designers showcase their portfolios.
+            &#169; 2023 | Craftify is a website to help designers showcase their
+            portfolios.
           </p>
         </div>
       </div>
