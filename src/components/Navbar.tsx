@@ -37,7 +37,7 @@ export default function Navbar() {
           {Login ? (
             <>
               <Link
-                href='#'
+                href='/explore'
                 className='hover:text-primary font-medium text-base hover:underline'
               >
                 Explore
@@ -51,7 +51,7 @@ export default function Navbar() {
             </>
           ) : (
             <Link
-              href='#'
+              href='/explore'
               className='hover:text-primary font-medium text-base hover:underline'
             >
               Explore
