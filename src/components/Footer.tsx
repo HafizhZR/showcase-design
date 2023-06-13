@@ -22,7 +22,7 @@ const Footer = () => {
     },
     {
       title: 'SEE CRAFTIFY',
-      links: [{ title: 'Explore Design Craftify', route: '#' }],
+      links: [{ title: 'Explore Design Craftify', route: '/#' }],
     },
   ];
 
