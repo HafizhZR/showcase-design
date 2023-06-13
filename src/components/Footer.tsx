@@ -22,7 +22,7 @@ const Footer = () => {
     },
     {
       title: 'SEE CRAFTIFY',
-      links: [{ title: 'Explore Design Craftify', route: '/#' }],
+      links: [{ title: 'Explore Design Craftify', route: '/' }],
     },
   ];
 
@@ -40,25 +40,17 @@ const Footer = () => {
               And connect with us
             </h4>
             <div className="flex justify-start">
-              <Link href="/">
+              <Link href="/pages/404.tsx">
                 <Image src={Twitter} alt="logo" className="h-[30px] w-[30px]" />
               </Link>
-              <Link href="/">
+              <Link href="/pages/404.tsx">
                 <Image src={YouTube} alt="logo" className="h-[30px] w-[30px]" />
               </Link>
-              <Link href="/">
-                <Image
-                  src={Facebook}
-                  alt="logo"
-                  className="h-[30px] w-[30px]"
-                />
+              <Link href="/pages/404.tsx">
+                <Image src={Facebook} alt="logo" className="h-[30px] w-[30px]" />
               </Link>
-              <Link href="/">
-                <Image
-                  src={Pinterest}
-                  alt="logo"
-                  className="h-[30px] w-[30px]"
-                />
+              <Link href="/pages/404.tsx">
+                <Image src={Pinterest} alt="logo" className="h-[30px] w-[30px]" />
               </Link>
             </div>
           </div>

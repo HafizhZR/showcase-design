@@ -35,7 +35,7 @@ export default function aboutUs() {
     <>
       <>
         <Head>
-          <title>Tentang - Craftify Member</title>
+          <title>Tentang - Craftify</title>
           <meta name="description" content="Tentang - Craftify Member" />
         </Head>
         <section className="flex flex-col items-center justify-center">
