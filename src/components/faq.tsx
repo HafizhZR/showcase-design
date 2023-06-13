@@ -1,6 +1,5 @@
 import Illustration from '@/assets/illustration.png';
 import IconFaq from '@/assets/icon_faq.png';
-import Icon from '@/assets/Craftivy-icon.png';
 import Image from 'next/image';
 import Head from 'next/head';
 
@@ -20,13 +19,6 @@ export default function faq() {
       question: 'Bagaimana cara upload karya di Craftify?',
       answer:
         'Untuk mengupload karya Anda di Craftify, kunjungi situs  kami dan klik tombol "Create Post". Isi informasi yang diperlukan untuk desain Anda dan publish karya Anda untuk mulai terhubung dengan para kreator kami platform kami.',
-    },
-  ];
-
-  const icon_faq = [
-    {
-      image: IconFaq,
-      name: 'icon FAQ',
     },
   ];
 

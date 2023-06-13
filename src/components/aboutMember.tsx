@@ -1,19 +1,22 @@
 import ProfilePic from '@/assets/profile-pic.png';
 import Logo from '@/assets/navbar-logo.png';
 import Icon from '@/assets/Craftivy-icon.png';
+import Hafizh from '@/assets/member/hafizh.png';
+import Roy from '@/assets/member/roy.png';
+import Nicko from '@/assets/member/nicko.png';
 import Image from 'next/image';
 import Head from 'next/head';
 
 export default function aboutMember() {
   const datas = [
     {
-      image: ProfilePic,
+      image: Hafizh,
       name: 'Hafizh Zaghlul Rizal',
       university: 'Universitas Lampung',
       id: 'ID STUDENT : F042XB388',
     },
     {
-      image: ProfilePic,
+      image: Roy,
       name: 'Teuku Muhammad Roy',
       university: 'Universitas Syah Kuala',
       id: 'ID STUDENT : F063XB134',
@@ -25,7 +28,7 @@ export default function aboutMember() {
       id: 'ID STUDENT : F111XB253',
     },
     {
-      image: ProfilePic,
+      image: Nicko,
       name: 'Nicko Ilham Pramudya',
       university: 'Universitas Muhammadiyah Surakarta',
       id: 'ID STUDENT : F122XB265',
@@ -115,6 +118,7 @@ export default function aboutMember() {
               <div
                 key={index}
                 className="flex cursor-pointer flex-col items-center justify-center rounded-md border px-3 py-11 transition-all duration-300 hover:-translate-y-2"
+                style={{ boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)' }}
                 data-aos="fade-up"
                 data-aos-duration={index * 200 + 600}
               >
