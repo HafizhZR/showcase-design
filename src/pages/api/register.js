@@ -1,5 +1,5 @@
-import User from '../../../models/user';
-import dbConnect from '../../../config/dbConnect';
+import User from '../../models/user';
+import dbConnect from '../../config/dbConnect';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -7,11 +7,17 @@ export default async function handler(req, res) {
 
     const { name, email, password, confirmPassword } = req.body;
 
+    if (password !== confirmPassword) {
+      return res.status(400).json({
+        success: false,
+        message: 'Password does not match',
+      });
+    }
+
     const user = await User.create({
       name,
       email,
       password,
-      confirmPassword,
     });
 
     res.status(201).json({
