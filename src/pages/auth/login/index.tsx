@@ -5,6 +5,7 @@ import craftifyWhite from '@/assets/craftifyWhite.png';
 import bgLogin from '@/assets/background-login.png';
 import { useState } from 'react';
 import Image from 'next/image';
+import { signIn } from 'next-auth/react';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -18,9 +19,19 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: Handle login submission
+
+    try {
+      const data = await signIn('credentials', {
+        redirect: false,
+        email,
+        password,
+      });
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
