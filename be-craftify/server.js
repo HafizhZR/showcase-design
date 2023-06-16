@@ -21,7 +21,7 @@ const mongooseConfig = {
 };
 
 db.mongoose
-  .connect(db.url, mongooseConfig)
+  .connect(process.env.DB_URL, mongooseConfig)
   .then(() => console.log("Database connected"))
   .catch(err => {
     console.log(`Failed to connect to database: ${err.message}`);
