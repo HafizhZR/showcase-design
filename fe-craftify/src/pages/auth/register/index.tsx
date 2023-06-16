@@ -5,15 +5,17 @@ import craftifyWhite from '@/assets/craftifyWhite.png';
 import bgLogin from '@/assets/background-login.png';
 import { useState } from 'react';
 import Image from 'next/image';
+import axios from 'axios';
+
 
 const Register = () => {
-  const [fullName, setFullName] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleFullNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFullName(e.target.value);
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
   };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,9 +32,20 @@ const Register = () => {
     setConfirmPassword(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: Handle register submission
+
+    try {
+      const { data } = await axios.post('/api/register', {
+        name,
+        email,
+        password,
+        confirmPassword,
+      });
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -68,9 +81,7 @@ const Register = () => {
           className='flex h-screen basis-1/2 flex-col items-start justify-center px-[66px] min-w-fit mr-20 mt-20'
           onSubmit={handleSubmit}
         >
-          <h2 className='pb-2 text-[44px] font-extrabold'>
-            Register
-          </h2>
+          <h2 className='pb-2 text-[44px] font-extrabold'>Register</h2>
           <h3 className='pb-8 text-xl'>
             Already have an account?{' '}
             <Link
@@ -88,9 +99,9 @@ const Register = () => {
             <input
               type='text'
               placeholder=''
-              name='fullName'
-              value={fullName}
-              onChange={handleFullNameChange}
+              name='name'
+              value={name}
+              onChange={handleNameChange}
               className='w-full border-b-2 border-[#9F9F9F] p-2 focus:outline-none'
             />
           </div>

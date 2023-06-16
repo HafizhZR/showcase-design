@@ -1,16 +1,16 @@
-import { useState } from 'react';
+import { use, useState } from 'react';
 import { BsFillTriangleFill } from 'react-icons/bs';
 import { CgProfile, CgLogOff, CgSoftwareUpload } from 'react-icons/cg';
 import Logo from '@/assets/navbar-logo.png';
 import Avatar from '@/assets/avatar.png';
 import Image from 'next/image';
 import Link from 'next/link';
+// import { useSession, signOut } from 'next-auth/react';
 
 export default function Navbar() {
-  const Login = true; // Ubah ke false kalau mau lihat tampilan Navbar ketika belum login, ubah ke true kalau mau lihat tampilan Navbar ketika sudah login
-  const user = {
-    name: 'Harits Naufal',
-  };
+
+  // const { data } = useSession();
+  // console.log(data);
 
   const [isHover, setIsHover] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -34,10 +34,10 @@ export default function Navbar() {
           <Link href='/'>
             <Image src={Logo} alt='logo' className='h-[28px] md:h-8 w-auto' />
           </Link>
-          {Login ? (
+          {/* {data?.user ? ( */}
             <>
               <Link
-                href='#'
+                href='/explore'
                 className='hover:text-primary font-medium text-base hover:underline'
               >
                 Explore
@@ -49,17 +49,17 @@ export default function Navbar() {
                 Create Post
               </Link>
             </>
-          ) : (
+          {/* ) : (
             <Link
-              href='#'
+              href='/explore'
               className='hover:text-primary font-medium text-base hover:underline'
             >
               Explore
             </Link>
-          )}
+          )} */}
         </div>
         <div className='flex items-center justify-center gap-3 md:gap-11'>
-          {Login ? (
+          {/* {data?.user ? ( */}
             <div className='relative'>
               <div
                 className='avatar flex cursor-pointer items-center gap-2 py-2 px-3'
@@ -69,18 +69,17 @@ export default function Navbar() {
               >
                 <p
                   className='w-24 md:w-36 mr-2 truncate text-right font-semibold'
-                  title={user?.name}
                 >
-                  {user?.name}
+                  {/* {data?.user?.name} */}
                 </p>
-                <div className='mr-2'>
+                {/* <div className='mr-2'>
                   <Image
                     src={Avatar}
                     alt='avatar'
                     className='w-9 md:w-10 rounded-full'
                   />
-                </div>
-                <div
+                </div> */}
+                {/* <div
                   className={`${
                     isDropdownOpen ? 'rotate-180' : ''
                   } transition-transform duration-300`}
@@ -89,7 +88,7 @@ export default function Navbar() {
                     className='text-primary rotate-180'
                     size={10}
                   />
-                </div>
+                </div> */}
               </div>
               {isDropdownOpen && (
                 <div
@@ -112,7 +111,7 @@ export default function Navbar() {
                     <h3>Create Post</h3>
                   </Link>
                   <button
-                    // onClick={handleLogout}
+                    // onClick={() => signOut()}
                     className='flex w-full items-center gap-2 border-t-2 pt-3 font-semibold text-gray-600 transition-all hover:text-primary '
                   >
                     <CgLogOff size={20} />
@@ -121,7 +120,7 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-          ) : (
+          {/* ) : ( */}
             <div className='flex items-center justify-center gap-3'>
               <Link
                 href={'/auth/login'}
@@ -136,7 +135,7 @@ export default function Navbar() {
                 Register
               </Link>
             </div>
-          )}
+          {/* )} */}
         </div>
       </div>
     </nav>
