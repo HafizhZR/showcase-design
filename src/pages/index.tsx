@@ -17,11 +17,11 @@ export default function Home() {
         <meta name='description' content='Homepage Carftify App' />
       </Head>
       <div className='min-h-screen flex flex-col md:flex-row md:items-center py-8 px-8'>
-        <div className='md:order-2 mt-20 ml-40'>
+        <div className='md:order-2 ml-40'>
           <Image src={headLogo} alt='Logo' width={800} height={100} />
         </div>
         <div className='md:order-1'>
-          <h1 className='text-5xl font-bold mt-20 ml-10'>
+          <h1 className='text-5xl font-bold ml-10'>
             <span className='text-primary'>
               Bagikan dan temukan kreativitas
             </span>
@@ -44,7 +44,7 @@ export default function Home() {
       </div>
 
       <div className='flex justify-center'>
-        <div className='w-full p-20'>
+        <div className='w-full p-5'>
           <h1 className='text-3xl font-bold text-center '>
             <span className='text-primary'>Platform terbaik untuk</span>{' '}
             <span className='text-secondary'>Memamerkan karya desain</span>
@@ -62,7 +62,7 @@ export default function Home() {
             </p>
           </section>
           {/* Card */}
-          <div className='flex justify-center'>
+          <div className='flex justify-center mt-10'>
             <div className='grid grid-cols-3 gap-4'>
               <div className='bg-white p-4 shadow-lg rounded-lg text-center'>
                 <div className='flex flex-col items-center'>
