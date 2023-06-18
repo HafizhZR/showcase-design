@@ -86,9 +86,11 @@ export default function EditProfile() {
           </div>
         </div>
         <div className='flex flex-col items-center gap-3'>
-          <button className='bg-primary border-2 border-white rounded-2xl text-white uppercase py-3 px-5 w-[180px] font-semibold text-sm'>
-            Save Changes
-          </button>
+          <Link href='/user/profile'>
+            <button className='bg-primary border-2 border-white rounded-2xl text-white uppercase py-3 px-5 w-[180px] font-semibold text-sm'>
+              Save Changes
+            </button>
+          </Link>
           <Link href='/user/profile'>
             <button className='bg-primary border-2 border-white rounded-2xl text-white uppercase py-3 px-5 w-[180px] font-semibold text-sm'>
               Cancel

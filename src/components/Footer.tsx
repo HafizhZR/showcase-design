@@ -40,16 +40,16 @@ const Footer = () => {
               And connect with us
             </h4>
             <div className="flex justify-start">
-              <Link href="/pages/404.tsx">
+              <Link target='_blank' rel="noreferrer" href={'https://twitter.com'}>
                 <Image src={Twitter} alt="logo" className="h-[30px] w-[30px]" />
               </Link>
-              <Link href="/pages/404.tsx">
+              <Link target='_blank' rel="noreferrer" href={'https://youtube.com'}>
                 <Image src={YouTube} alt="logo" className="h-[30px] w-[30px]" />
               </Link>
-              <Link href="/pages/404.tsx">
+              <Link target='_blank' rel="noreferrer" href={'https://facebook.com'}>
                 <Image src={Facebook} alt="logo" className="h-[30px] w-[30px]" />
               </Link>
-              <Link href="/pages/404.tsx">
+              <Link target='_blank' rel="noreferrer" href={'https://pinterest.com'}>
                 <Image src={Pinterest} alt="logo" className="h-[30px] w-[30px]" />
               </Link>
             </div>

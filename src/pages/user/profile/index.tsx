@@ -6,8 +6,22 @@ import ProfilePic from '@/assets/profile-pic.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import PostImage from '@/assets/post-image.png';
+import { useSession } from 'next-auth/react';
+import React, { useEffect, useState } from "react";
 
-const Profile: React.FC<{ posts: any[] }> = ({ posts }) => {
+const Profile: React.FC  = () => {
+  const { data } = useSession();
+  const [posts, setPosts] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const response = await fetch("http://localhost:3000/api/getDesign");
+      const data = await response.json();
+      setPosts(data.data);
+    };
+
+    fetchPosts();
+  }, []);
   return (
     <>
       <Navbar />
@@ -34,13 +48,13 @@ const Profile: React.FC<{ posts: any[] }> = ({ posts }) => {
                 className='rounded-xl w-[100px] mx-auto'
               />
               <p className='font-semibold text-lg text-primary mx-auto'>
-                Nicko Ilham
+                {data?.user?.name}
               </p>
               <hr className='border-[#B5B5B5] border-[1.5px] w-full my-1' />
             </div>
             <div className='flex flex-col gap-1'>
               <p className='font-medium text-sm'>Graphic Designer</p>
-              <p className='font-medium text-sm'>email@domain.com</p>
+              <p className='font-medium text-sm'>{data?.user?.email}</p>
               <p className='font-medium text-sm'>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Delectus, dicta.
@@ -58,10 +72,12 @@ const Profile: React.FC<{ posts: any[] }> = ({ posts }) => {
             </div>
             <div className='flex flex-wrap justify-center pb-4 gap-4'>
                 {posts.map((post) => (
-                  <Link href={`/posts/detail/${post.id}`} key={post.id}>
+                  <Link href={`/posts/detail/${post._id}`} key={post._id}>
                     <div className='flex flex-col max-w-[150px] lg:max-w-[160px] h-[175px] lg:h-[200px] rounded-lg shadow-xl'>
                       <Image
-                        src={PostImage}
+                        src={`data:image/png;base64,${post.thumbnail_design}`}
+                        width={150}
+                        height={100}
                         alt='post-image'
                         className='w-full min-h-[120.85px] object-cover rounded-t-lg rounded-r-lg rounded-b-none'
                       />
@@ -71,7 +87,7 @@ const Profile: React.FC<{ posts: any[] }> = ({ posts }) => {
                           alt='profile-pic'
                           className='rounded-full w-4'
                         />
-                        <span className='text-[12px] font-medium'>{post.fullname}</span>
+                        <span className='text-[12px] font-medium'>{data?.user?.name}</span>
                       </div>
                       <p className='text-[14px] font-bold px-2'>{post.judul_design}</p>
                     </div>
@@ -84,14 +100,6 @@ const Profile: React.FC<{ posts: any[] }> = ({ posts }) => {
       <Footer />
     </>
   );
-}
-export async function getStaticProps() {
-  const getPosts = await fetch("http://localhost:8000/design")
-  const posts = await getPosts.json()
-
-  return {
-    props: { posts },
-  }
 }
 
 export default Profile;

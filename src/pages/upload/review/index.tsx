@@ -26,7 +26,7 @@ export default function ReviewPostingan() {
   };
 
   const handlePublish = () => {
-    // publikasi postingan
+    router.push('/explore');
   };
 
   return (
