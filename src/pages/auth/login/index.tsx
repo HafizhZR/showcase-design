@@ -6,10 +6,13 @@ import bgLogin from '@/assets/background-login.png';
 import { useState } from 'react';
 import Image from 'next/image';
 import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import Swal from 'sweetalert2';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -28,8 +31,17 @@ const Login = () => {
         email,
         password,
       });
-      console.log(data);
-    } catch (error) {
+
+      if (data?.error) {
+        Swal.fire({
+          title: data.error,
+          icon: 'error',
+          confirmButtonText: 'OK',
+        });
+      } else {
+        router.push('/');
+      }
+    } catch (error: any) {
       console.log(error);
     }
   };
@@ -74,18 +86,18 @@ const Login = () => {
         >
           <h2 className='pb-2 text-[44px] font-extrabold'>Log In</h2>
           <h3 className='pb-20 text-xl'>
-            New user?{' '}
+            New User?{' '}
             <Link
               href='/auth/register'
               className='underline-animation text-primary hover:text-primary text-color-mint'
             >
-              Create an account
+              Create an Account
             </Link>
           </h3>
 
           <div className='flex w-full flex-col items-start justify-center pb-10'>
             <label className='pb-3 text-lg font-medium text-[#9F9F9F]'>
-              Your email address
+              Email Address
             </label>
             <input
               type='email'
@@ -94,12 +106,13 @@ const Login = () => {
               value={email}
               onChange={handleEmailChange}
               className='w-full border-b-2 border-[#9F9F9F] p-2 focus:outline-none'
+              required
             />
           </div>
 
           <div className='flex w-full flex-col justify-center pb-24'>
             <label className='pb-3 text-lg font-medium text-[#9F9F9F]'>
-              Your password
+              Password
             </label>
             <div className='mb-3 flex w-full items-center justify-between'>
               <input
@@ -109,6 +122,7 @@ const Login = () => {
                 value={password}
                 onChange={handlePasswordChange}
                 className='w-full border-b-2 border-[#9F9F9F] p-2 focus:outline-none'
+                required
               />
             </div>
             <div className='text-end'>
@@ -116,7 +130,7 @@ const Login = () => {
                 href='/auth/forgot-password'
                 className='float-right w-fit text-primary'
               >
-                Forgot your password?
+                Forgot your Password?
               </Link>
             </div>
           </div>

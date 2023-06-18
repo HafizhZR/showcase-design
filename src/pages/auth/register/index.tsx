@@ -6,12 +6,15 @@ import bgLogin from '@/assets/background-login.png';
 import { useState } from 'react';
 import Image from 'next/image';
 import axios from 'axios';
+import { useRouter } from 'next/router';
+import Swal from 'sweetalert2';
 
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const router = useRouter();
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -41,9 +44,19 @@ const Register = () => {
         password,
         confirmPassword,
       });
-      console.log(data);
-    } catch (error) {
-      console.log(error);
+      Swal.fire({
+        icon: 'success',
+        title: 'Registration Successful',
+        text: 'You can now log in to your account',
+      }).then(() => {
+        router.push('/auth/login');
+      });
+    } catch (error: any) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Registration Failed',
+        text: error.response.data.message,
+      });
     }
   };
 
@@ -82,7 +95,7 @@ const Register = () => {
         >
           <h2 className='pb-2 text-[44px] font-extrabold'>Register</h2>
           <h3 className='pb-8 text-xl'>
-            Already have an account?{' '}
+            Already Have an Account?{' '}
             <Link
               href='/auth/login'
               className='underline-animation text-primary hover:text-primary'
@@ -102,6 +115,7 @@ const Register = () => {
               value={name}
               onChange={handleNameChange}
               className='w-full border-b-2 border-[#9F9F9F] p-2 focus:outline-none'
+              required
             />
           </div>
 
@@ -116,6 +130,7 @@ const Register = () => {
               value={email}
               onChange={handleEmailChange}
               className='w-full border-b-2 border-[#9F9F9F] p-2 focus:outline-none'
+              required
             />
           </div>
 
@@ -130,6 +145,7 @@ const Register = () => {
               value={password}
               onChange={handlePasswordChange}
               className='w-full border-b-2 border-[#9F9F9F] p-2 focus:outline-none'
+              required
             />
           </div>
 
@@ -145,6 +161,7 @@ const Register = () => {
                 value={confirmPassword}
                 onChange={handleConfirmPasswordChange}
                 className='w-full border-b-2 border-[#9F9F9F] p-2 focus:outline-none'
+                required
               />
             </div>
           </div>

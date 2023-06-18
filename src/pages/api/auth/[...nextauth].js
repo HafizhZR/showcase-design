@@ -1,9 +1,9 @@
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
-import User from '../../../../models/user';
+import User from '../../../models/user';
 import bcrypt from 'bcryptjs';
-import dbConnect from '../../../../config/dbConnect';
+import dbConnect from '../../../config/dbConnect';
 
 export default NextAuth({
   session: {
@@ -19,7 +19,7 @@ export default NextAuth({
         const user = await User.findOne({ email });
 
         if (!user) {
-          throw new Error('Invalid Email or Password');
+          throw new Error('Email not Registered');
         }
 
         const isPasswordMatched = await bcrypt.compare(password, user.password);

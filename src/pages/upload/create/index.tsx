@@ -74,29 +74,29 @@ export default function CreatePostingan() {
         <div className='flex'>
           <button
             type='button'
-            className='bg-gray-300 text-black font-bold py-2 px-4 rounded hover:opacity-50 ml-8 w-[150px] h-[50px] sm:w-[100px] sm:h-[40px]'
+            className='bg-gray-300 text-black font-bold py-2 px-4 rounded hover:opacity-50 ml-8 w-[150px] h-[50px]'
             onClick={handleCancel}
           >
             Cancel
           </button>
           <div className='flex justify-center items-center mb-6 mx-auto'>
             <div className='flex-wrap items-center justify-center'>
-              <div className='w-10 h-10 sm:w-8 sm:h-8 flex items-center justify-center rounded-full bg-primary text-white font-semibold mx-auto'>
+              <div className='w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white font-semibold mx-auto'>
                 1
               </div>
-              <div className='h-6 sm:w-10'>
-                <h1 className='font-semibold mb-6 sm:text-sm flex justify-center text-center'>
+              <div className='h-6 '>
+                <h1 className='font-semibold mb-6 flex justify-center text-center'>
                   Upload Detail Post
                 </h1>
               </div>
             </div>
-            <hr className='border-gray-300 border-b-2 sm:w-32 w-60 mb-5 weight-100' />
+            <hr className='border-gray-300 border-b-2 w-60 mb-5 weight-100' />
             <div className='flex-wrap items-center justify-center'>
-              <div className='w-10 h-10 sm:w-8 sm:h-8 flex items-center justify-center rounded-full bg-gray-300 text-white font-semibold mx-auto'>
+              <div className='w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 text-white font-semibold mx-auto'>
                 2
               </div>
-              <div className='h-6 sm:w-10'>
-                <h1 className='font-semibold mb-6 sm:text-sm flex justify-center text-center'>
+              <div className='h-6'>
+                <h1 className='font-semibold mb-6  flex justify-center text-center'>
                   Review Postingan
                 </h1>
               </div>

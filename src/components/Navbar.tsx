@@ -10,7 +10,6 @@ import { useSession, signOut } from 'next-auth/react';
 export default function Navbar() {
 
   const { data } = useSession();
-  console.log(data);
 
   const [isHover, setIsHover] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -37,7 +36,7 @@ export default function Navbar() {
           {data?.user ? (
             <>
               <Link
-                href='#'
+                href='/explore'
                 className='hover:text-primary font-medium text-base hover:underline'
               >
                 Explore
@@ -51,7 +50,7 @@ export default function Navbar() {
             </>
           ) : (
             <Link
-              href='#'
+              href='/explore'
               className='hover:text-primary font-medium text-base hover:underline'
             >
               Explore
