@@ -17,11 +17,11 @@ export default function Home() {
         <meta name='description' content='Homepage Carftify App' />
       </Head>
       <div className='min-h-screen flex flex-col md:flex-row md:items-center py-8 px-8'>
-        <div className='md:order-2 mt-20 ml-40'>
-          <Image src={headLogo} alt='Logo' width={500} height={100} />
+        <div className='md:order-2 ml-40'>
+          <Image src={headLogo} alt='Logo' width={800} height={100} />
         </div>
         <div className='md:order-1'>
-          <h1 className='text-5xl font-bold mt-20 ml-10'>
+          <h1 className='text-5xl font-bold ml-10'>
             <span className='text-primary'>
               Bagikan dan temukan kreativitas
             </span>
@@ -34,8 +34,7 @@ export default function Home() {
             <span className='text-primary font-semibold'>Craftify</span>{' '}
             <span>
               sebuah platform yang dirancang untuk memberikan ruang bagi para
-              Kreator Desain <br />
-              untuk memamerkan karya mereka dan terhubung dengan pengguna lain
+              Kreator Desain untuk memamerkan karya mereka dan terhubung dengan pengguna lain
             </span>
           </h2>
           <button className='bg-primary hover:bg-opacity-50 text-white font-bold ml-10 mt-5 py-2 px-10 rounded'>
@@ -45,7 +44,7 @@ export default function Home() {
       </div>
 
       <div className='flex justify-center'>
-        <div className='w-full p-20'>
+        <div className='w-full p-5'>
           <h1 className='text-3xl font-bold text-center '>
             <span className='text-primary'>Platform terbaik untuk</span>{' '}
             <span className='text-secondary'>Memamerkan karya desain</span>
@@ -63,7 +62,7 @@ export default function Home() {
             </p>
           </section>
           {/* Card */}
-          <div className='flex justify-center'>
+          <div className='flex justify-center mt-10'>
             <div className='grid grid-cols-3 gap-4'>
               <div className='bg-white p-4 shadow-lg rounded-lg text-center'>
                 <div className='flex flex-col items-center'>
@@ -120,11 +119,12 @@ export default function Home() {
               Sekilas tentang <span className='text-secondary'>Craftify</span>
             </h2>
             <p className='text-lg text-center font-semibold ml-48 mr-48'>
-              Craftify merupakan platform yang dirancang khusus untuk memberikan
+            <span className='text-primary font-semibold'>Craftify</span>{' '}
+              merupakan platform yang dirancang khusus untuk memberikan
               kesempatan kepada para Kreator Desain untuk memamerkan
               karya-karyanya dan terhubung dengan pengguna lain yang sedang
-              mencari inspirasi desain. Dengan Craftify, kreativitas para
-              Kreator Desain dapat ditampung dan ditampilkan dengan mudah,
+              mencari inspirasi desain. Dengan <span className='text-primary font-semibold'>Craftify</span> 
+              kreativitas para Kreator Desain dapat ditampung dan ditampilkan dengan mudah,
               sehingga para pengguna lain dapat menemukan inspirasi baru dan
               mengeksplorasi berbagai ide desain yang menarik.
             </p>
