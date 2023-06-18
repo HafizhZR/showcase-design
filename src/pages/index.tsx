@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
       <div className='min-h-screen flex flex-col md:flex-row md:items-center py-8 px-8'>
         <div className='md:order-2 mt-20 ml-40'>
-          <Image src={headLogo} alt='Logo' width={500} height={100} />
+          <Image src={headLogo} alt='Logo' width={800} height={100} />
         </div>
         <div className='md:order-1'>
           <h1 className='text-5xl font-bold mt-20 ml-10'>
@@ -34,8 +34,7 @@ export default function Home() {
             <span className='text-primary font-semibold'>Craftify</span>{' '}
             <span>
               sebuah platform yang dirancang untuk memberikan ruang bagi para
-              Kreator Desain <br />
-              untuk memamerkan karya mereka dan terhubung dengan pengguna lain
+              Kreator Desain untuk memamerkan karya mereka dan terhubung dengan pengguna lain
             </span>
           </h2>
           <button className='bg-primary hover:bg-opacity-50 text-white font-bold ml-10 mt-5 py-2 px-10 rounded'>
@@ -120,11 +119,12 @@ export default function Home() {
               Sekilas tentang <span className='text-secondary'>Craftify</span>
             </h2>
             <p className='text-lg text-center font-semibold ml-48 mr-48'>
-              Craftify merupakan platform yang dirancang khusus untuk memberikan
+            <span className='text-primary font-semibold'>Craftify</span>{' '}
+              merupakan platform yang dirancang khusus untuk memberikan
               kesempatan kepada para Kreator Desain untuk memamerkan
               karya-karyanya dan terhubung dengan pengguna lain yang sedang
-              mencari inspirasi desain. Dengan Craftify, kreativitas para
-              Kreator Desain dapat ditampung dan ditampilkan dengan mudah,
+              mencari inspirasi desain. Dengan <span className='text-primary font-semibold'>Craftify</span> 
+              kreativitas para Kreator Desain dapat ditampung dan ditampilkan dengan mudah,
               sehingga para pengguna lain dapat menemukan inspirasi baru dan
               mengeksplorasi berbagai ide desain yang menarik.
             </p>
