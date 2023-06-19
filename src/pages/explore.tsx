@@ -12,9 +12,9 @@ const ExplorePage: React.FC = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("http://localhost:3000/api/getDesign");
+      const response = await fetch("https://be-test-deploy.vercel.app/design");
       const data = await response.json();
-      setPosts(data.data);
+      setPosts(data);
     };
 
     fetchPosts();
@@ -36,10 +36,10 @@ const ExplorePage: React.FC = () => {
               <div className="flex flex-col max-w-[150px] lg:max-w-[160px] h-[175px] lg:h-[200px] rounded-lg shadow-xl">
                 <Image
                   src={`data:image/png;base64,${post.thumbnail_design}`}
-                  width={150}
-                  height={100}
+                  width={1000}
+                  height={1000}
                   alt="post-image"
-                  className="w-full min-h-[120.85px] object-cover rounded-t-lg rounded-r-lg rounded-b-none"
+                  className="w-full h-[120.85px] object-cover rounded-t-lg rounded-r-lg rounded-b-none"
                 />
                 <div className="flex flex-row items-center gap-1 px-2 pt-2">
                   <Image
