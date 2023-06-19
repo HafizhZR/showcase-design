@@ -9,7 +9,7 @@ import PostImage from '@/assets/post-image.png';
 import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from "react";
 
-const Profile: React.FC  = () => {
+const Profile: React.FC = () => {
   const { data } = useSession();
   const [posts, setPosts] = useState<any[]>([]);
 
@@ -71,32 +71,32 @@ const Profile: React.FC  = () => {
               </div>
             </div>
             <div className='flex flex-wrap justify-center pb-4 gap-4'>
-                {posts.map((post) => (
-                  <Link href={`/posts/detail/${post._id}`} key={post._id}>
-                    <div className='flex flex-col max-w-[150px] lg:max-w-[160px] h-[175px] lg:h-[200px] rounded-lg shadow-xl'>
+              {posts.map((post) => (
+                <Link href={`/posts/detail/${post._id}`} key={post._id}>
+                  <div className='flex flex-col max-w-[150px] lg:max-w-[160px] h-[175px] lg:h-[200px] rounded-lg shadow-xl'>
+                    <Image
+                      src={`data:image/png;base64,${post.thumbnail_design}`}
+                      width={1000}
+                      height={1000}
+                      alt='post-image'
+                      className='w-full h-[120.85px] object-cover rounded-t-lg rounded-r-lg rounded-b-none'
+                    />
+                    <div className='flex flex-row items-center gap-1 px-2 pt-2'>
                       <Image
-                        src={`data:image/png;base64,${post.thumbnail_design}`}
-                        width={150}
-                        height={100}
-                        alt='post-image'
-                        className='w-full min-h-[120.85px] object-cover rounded-t-lg rounded-r-lg rounded-b-none'
+                        src={ProfilePic}
+                        alt='profile-pic'
+                        className='rounded-full w-4'
                       />
-                      <div className='flex flex-row items-center gap-1 px-2 pt-2'>
-                        <Image
-                          src={ProfilePic}
-                          alt='profile-pic'
-                          className='rounded-full w-4'
-                        />
-                        <span className='text-[12px] font-medium'>{data?.user?.name}</span>
-                      </div>
-                      <p className='text-[14px] font-bold px-2'>{post.judul_design}</p>
+                      <span className='text-[12px] font-medium'>{data?.user?.name}</span>
                     </div>
-                  </Link>
-                ))}
-              </div>
+                    <p className='text-[14px] font-bold px-2'>{post.judul_design}</p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
+      </div>
       <Footer />
     </>
   );

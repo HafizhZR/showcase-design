@@ -4,8 +4,27 @@ import Avatar from '@/assets/avatar.png';
 import PostImage from '@/assets/post-image.png';
 import { CgProfile, CgLink } from 'react-icons/cg';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { useSession } from 'next-auth/react';
+import Link from 'next/link';
 
 export default function PostDetail() {
+  const { data } = useSession();
+  const [currentDate, setCurrentDate] = useState('');
+
+  useEffect(() => {
+    const getCurrentDate = () => {
+      const date = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = date.toLocaleDateString('id-ID');
+      setCurrentDate(formattedDate);
+    };
+
+    getCurrentDate();
+  }, []);
+
+
+
   return (
     <>
       <Navbar />
@@ -18,7 +37,7 @@ export default function PostDetail() {
             <Image src={Avatar} alt='avatar' className='rounded-full w-6' />
           </div>
           <div>
-            <h2 className='text-sm font-semibold uppercase'>Harits Naufal</h2>
+            <h2 className='text-sm font-semibold uppercase'>{data?.user?.name}</h2>
           </div>
         </div>
         <div className='content flex flex-col gap-3'>
@@ -71,13 +90,13 @@ export default function PostDetail() {
                     />
                   </div>
                   <div className='owner-detail'>
-                    <h2 className='font-bold text-md'>Harits Naufal</h2>
+                    <h2 className='font-bold text-md'>{data?.user?.name}</h2>
                   </div>
                 </div>
-                <button className='flex bg-primary text-white font-semibold min-h-[40px] w-auto rounded-3xl items-center justify-center'>
+                <Link target='_blank' rel="noreferrer" href="../user/profile" className='flex bg-primary text-white font-semibold min-h-[40px] w-auto rounded-3xl items-center justify-center'>
                   <CgProfile className='w-4 mr-2' />
                   View Profile
-                </button>
+                </Link>
               </div>
               <div className='bg-white flex flex-col justify-center p-8 gap-6 w-full md:w-2/4 lg:w-1/3 min-h-fit rounded-lg'>
                 <p className='text-[#656470] font-bold uppercase text-sm'>
@@ -87,14 +106,14 @@ export default function PostDetail() {
                   <div className='publish-detail'>
                     <h2 className='font-bold text-md'>Published At:</h2>
                     <p className='text-base font-medium text-primary'>
-                      20 May 2023
+                      {currentDate}
                     </p>
                   </div>
                 </div>
-                <button className='flex bg-primary text-white font-semibold min-h-[40px] w-auto rounded-3xl items-center justify-center'>
+                <Link target='_blank' rel="noreferrer" href={'https://figma.com'} className='flex bg-primary text-white font-semibold min-h-[40px] w-auto rounded-3xl items-center justify-center'>
                   <CgLink className='w-4 mr-2' />
                   View URL Project
-                </button>
+                </Link>
               </div>
             </div>
           </div>

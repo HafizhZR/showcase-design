@@ -35,19 +35,9 @@ export default function ReviewPostingan() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("http://localhost:3000/api/getDesign");
+      const response = await fetch("https://be-test-deploy.vercel.app/design");
       const data = await response.json();
-      setPosts(data.data);
-    };
-
-    fetchPosts();
-  }, []);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch("http://localhost:3000/api/getDesign");
-      const data = await response.json();
-      setPosts(data.data);
+      setPosts(data);
     };
 
     fetchPosts();
@@ -148,7 +138,7 @@ export default function ReviewPostingan() {
                     </div>
                   </div>
                   <Link target='_blank' rel="noreferrer" href="../user/profile" className='flex bg-primary text-white font-semibold min-h-[40px] w-auto rounded-3xl items-center justify-center'>
-                  <CgProfile className='w-4 mr-2' />
+                    <CgProfile className='w-4 mr-2' />
                     View Profile
                   </Link>
                 </div>
@@ -165,7 +155,7 @@ export default function ReviewPostingan() {
                     </div>
                   </div>
                   <Link target='_blank' rel="noreferrer" href={'https://figma.com'} className='flex bg-primary text-white font-semibold min-h-[40px] w-auto rounded-3xl items-center justify-center'>
-                  <CgLink className='w-4 mr-2' />
+                    <CgLink className='w-4 mr-2' />
                     View URL Project
                   </Link>
                 </div>
