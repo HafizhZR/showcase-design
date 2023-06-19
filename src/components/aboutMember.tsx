@@ -17,7 +17,7 @@ export default function aboutMember() {
     },
     {
       image: Roy,
-      name: 'Teuku Muhammad Roy',
+      name: 'Teuku Muhammad Roy Adrian',
       university: 'Universitas Syiah Kuala',
       id: 'ID STUDENT : F063XB134',
     },
