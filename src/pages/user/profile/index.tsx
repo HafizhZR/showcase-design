@@ -15,9 +15,9 @@ const Profile: React.FC  = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("http://localhost:3000/api/getDesign");
+      const response = await fetch("https://be-test-deploy.vercel.app/design");
       const data = await response.json();
-      setPosts(data.data);
+      setPosts(data);
     };
 
     fetchPosts();
